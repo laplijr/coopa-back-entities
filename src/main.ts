@@ -2,12 +2,7 @@ import {NestFactory} from '@nestjs/core';
 import {DocumentBuilder, SwaggerModule} from "@nestjs/swagger";
 import {FastifyAdapter, NestFastifyApplication} from "@nestjs/platform-fastify";
 import {AppModule} from './app.module';
-import * as path from "path";
 import {Logger} from "@nestjs/common";
-
-require('dotenv').config({
-    path: path.resolve(process.cwd(), `env/.env.${process.env.NODE_ENV}`)
-});
 
 async function bootstrap() {
     const app = await NestFactory.create<NestFastifyApplication>(
